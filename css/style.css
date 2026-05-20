@@ -1,0 +1,383 @@
+/* ==========================================================================
+   GLOBAL CUSTOM COSMIC PALETTE VARIANT & COMPONENT CONSTANTS
+   ========================================================================== */
+:root {
+    --dark-charcoal: #1E1E1E;
+    --soft-cream: #F8F5F0;
+    --burnt-orange: #D97706;
+    --muted-teal: #0F766E;
+    --transition-premium: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Typography Overrides */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #FFFFFF;
+    color: var(--dark-charcoal);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+.font-cinzel {
+    font-family: 'Cinzel', serif !important;
+}
+
+.rounded-custom {
+    border-radius: 16px !important;
+}
+
+.section-padding {
+    padding: 120px 0;
+}
+
+/* UI Accent Lines and Dividers */
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.title-line {
+    width: 60px;
+    height: 2px;
+    background-color: var(--burnt-orange);
+    margin: 20px auto 0 auto;
+}
+
+/* ==========================================================================
+   STARTUP COSMIC LOADING SCREEN PRELOADER
+   ========================================================================== */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-charcoal);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-premium);
+}
+
+.cosmos-spinner {
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(248, 245, 240, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--burnt-orange);
+    border-bottom-color: var(--muted-teal);
+    animation: planetaryOrbit 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+
+@keyframes planetaryOrbit {
+    to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   STICKY TRANSPARENT GLASSMORPHIC NAVBAR
+   ========================================================================== */
+.custom-navbar {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-bottom: 1px solid rgba(30, 30, 30, 0.04);
+    padding: 20px 0;
+    transition: var(--transition-premium);
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 1.4rem;
+    color: var(--dark-charcoal) !important;
+}
+
+.custom-navbar .nav-link {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--dark-charcoal) !important;
+    padding: 6px 18px !important;
+    letter-spacing: 1.5px;
+    transition: var(--transition-premium);
+}
+
+.custom-navbar .nav-link:hover {
+    color: var(--burnt-orange) !important;
+    transform: translateY(-1px);
+}
+
+.nav-icon-link {
+    color: var(--dark-charcoal);
+    font-size: 1.25rem;
+    transition: var(--transition-premium);
+}
+
+.nav-icon-link:hover {
+    color: var(--burnt-orange);
+}
+
+/* ==========================================================================
+   HERO PRESENTATION LAYOUT
+   ========================================================================== */
+.hero-section {
+    min-height: calc(95vh - 85px);
+    background-color: #FFFFFF;
+    padding: 80px 0;
+}
+
+.hero-text-box .sub-title {
+    color: var(--muted-teal);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+}
+
+.hero-text-box h1 {
+    font-family: 'Cinzel', serif;
+    line-height: 1.15;
+}
+
+/* Premium Dynamic Buttons */
+.btn-custom-dark {
+    background-color: var(--dark-charcoal);
+    color: #FFFFFF;
+    border: 1px solid var(--dark-charcoal);
+    border-radius: 40px;
+    padding: 16px 36px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    transition: var(--transition-premium);
+}
+
+.btn-custom-dark:hover {
+    background-color: transparent;
+    color: var(--dark-charcoal);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(30, 30, 30, 0.1);
+}
+
+.btn-custom-outline {
+    background-color: transparent;
+    color: var(--dark-charcoal);
+    border: 1px solid rgba(30, 30, 30, 0.15);
+    border-radius: 40px;
+    padding: 16px 36px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    transition: var(--transition-premium);
+}
+
+.btn-custom-outline:hover {
+    background-color: var(--dark-charcoal);
+    color: #FFFFFF;
+    border-color: var(--dark-charcoal);
+    transform: translateY(-4px);
+}
+
+.hero-img-wrapper {
+    position: relative;
+    border-radius: 16px;
+}
+
+.hero-main-img {
+    box-shadow: 0 40px 80px rgba(30, 30, 30, 0.06);
+    transition: var(--transition-premium);
+}
+
+/* Subtle Balanced Glassmorphism Badge Component */
+.glass-card {
+    position: absolute;
+    bottom: -20px;
+    left: -30px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 22px 32px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.04);
+}
+
+/* ==========================================================================
+   RITUAL CATEGORY BLOCKS
+   ========================================================================== */
+.category-card {
+    height: 480px;
+    cursor: pointer;
+}
+
+.category-card img {
+    transition: var(--transition-premium);
+}
+
+.category-card:hover img {
+    transform: scale(1.05);
+}
+
+.category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(30,30,30,0) 40%, rgba(30,30,30,0.65) 100%);
+}
+
+.category-overlay h4 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   COSMETIC CONTAINER PRODUCT GRID CARDS
+   ========================================================================== */
+.product-card {
+    position: relative;
+    background: transparent;
+    transition: var(--transition-premium);
+}
+
+.product-img-container {
+    background-color: var(--soft-cream);
+    overflow: hidden;
+}
+
+.product-main-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: var(--transition-premium);
+}
+
+/* Action Deck Slide Up Interaction */
+.product-actions {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    width: 100%;
+    transition: var(--transition-premium);
+    z-index: 3;
+}
+
+.product-card:hover .product-main-img {
+    transform: scale(1.04);
+}
+
+.product-card:hover .product-actions {
+    bottom: 25px;
+    opacity: 1;
+}
+
+.product-actions .btn {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    border: none;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-premium);
+}
+
+.product-actions .btn:hover {
+    background-color: var(--dark-charcoal);
+    color: #FFFFFF;
+}
+
+.product-info .product-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.product-info .product-name a {
+    color: var(--dark-charcoal);
+    text-decoration: none;
+    transition: var(--transition-premium);
+}
+
+.product-info .product-name a:hover {
+    color: var(--burnt-orange);
+}
+
+.product-price {
+    font-weight: 700;
+    color: var(--dark-charcoal);
+}
+
+/* ==========================================================================
+   CAROUSEL DESIGN TUNING
+   ========================================================================== */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--dark-charcoal);
+    padding: 26px;
+    border-radius: 50%;
+    background-size: 35% 35%;
+}
+
+/* ==========================================================================
+   SCROLL REVEAL LAYOUT ARCHITECTURE
+   ========================================================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   ADACTIVE LAYOUT BREAKPOINTS (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 991.98px) {
+    .section-padding {
+        padding: 80px 0;
+    }
+    .hero-section {
+        padding-top: 40px;
+    }
+    .hero-text-box {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .hero-text-box .d-flex {
+        justify-content: center;
+    }
+    .glass-card {
+        bottom: 15px;
+        left: 15px;
+        padding: 15px 25px;
+    }
+    .product-main-img {
+        height: 320px;
+    }
+    .product-actions {
+        opacity: 1;
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .section-title {
+        font-size: 1.95rem;
+    }
+    .product-main-img {
+        height: 240px;
+    }
+    .product-actions {
+        display: none !important; /* Deactivated on responsive small ports to focus layout taps natively */
+    }
+}
+
